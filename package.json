@@ -5,7 +5,7 @@
   "engines": {
     "node": "16.13.0",
     "npm": "8.1.0"
-  } ,
+  },
   "main": "app.js",
   "scripts": {
     "start": "node app.js",
@@ -22,5 +22,8 @@
     "mongoose": "^6.1.0",
     "nodemon": "^2.0.15",
     "validator": "^13.7.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.4.1"
   }
 }
