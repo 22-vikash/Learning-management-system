@@ -19,8 +19,8 @@ app.set('view engine', 'ejs');
 // database connection
 const dbURI = 'mongodb+srv://vikash:vikash2002@cluster0.4xd7r.mongodb.net/project';
 mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true})
-  .then((result) => app.listen(port, () => {
-    console.log("Server is up and running on port: ", port);
+  .then((result) => app.listen(port, function(){
+    console.log("Server is up and running on port %d in %s mode", this.address().port, app.settings.env);
 }))
   .catch((err) => console.log(err));
 
