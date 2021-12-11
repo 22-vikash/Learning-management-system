@@ -6,6 +6,8 @@ const {requireAuth, checkUser} = require('./middleware/authMiddleware');
 
 const app = express();
 
+const port = process.env.PORT || 3000
+
 // middleware
 app.use(express.static('public'));
 app.use(express.json());
@@ -17,7 +19,9 @@ app.set('view engine', 'ejs');
 // database connection
 const dbURI = 'mongodb+srv://vikash:vikash2002@cluster0.4xd7r.mongodb.net/project';
 mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true})
-  .then((result) => app.listen(3000))
+  .then((result) => app.listen(port, () => {
+    console.log("Server is up and running on port: ", port);
+}))
   .catch((err) => console.log(err));
 
 // routes
